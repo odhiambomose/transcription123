@@ -1,6 +1,7 @@
 const mongoose=require("mongoose")
 const dotenv=require("dotenv")
 const express=require("express")
+const cors=require("cors")
 const userRoutes=require("./routes/user")
 const  authRoutes =require("./routes/auth")
 const transcriptRoutes=require("./routes/transcript")
@@ -25,6 +26,11 @@ app.use(express.json())
 app.listen(PORT,()=>{
     console.log(`server is running ${PORT}`)
 })
+const corsOptions={
+origin:"*"
+
+}
+app.use(cors(corsOptions))
 
 app.use("/api/user",userRoutes)
 
