@@ -8,6 +8,7 @@ const {verifyTokenAndAuthorization}=require("./verifyToken")
 router.post("/new",async (req,res)=>{
     const newTranscript= await new Transcript({
     name:req.body.name,
+    userid:req.body.userid,
     body:req.body.body
     
     
